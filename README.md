@@ -18,14 +18,14 @@ Thư mục cần xây dựng render bao gồm 2 file:
 ## Quy tắc cho file `settings.html`
 1. **Cách sử dụng**: Dùng file `settings.html` trong cấu trúc Repo mẫu để tạo cấu trúc tương tự.
 2. **Lưu ý**: Không dùng được code Liquid trong file này.
-3. **Hình ảnh**: Note luôn kích thước được cung cấp
+3. **Hình ảnh**: Note luôn kích thước được cung cấp ở mô tả của tôi vào settings
 
 ## Quy tắc cho file `index.liquid`
-1. **Check sử dụng**: Module có Check sử dụng, bọc toàn bộ module bằng Liquid.
-2. **Đặt class theo quy tắc**: Đặt class theo class cung cấp. Ví dụ: `home-banner` => `home-banner-demo`, `home-banner-demo-wrap`, `home-banner-demo-item`. Lưu ý: đây chỉ là ví dụ, bạn cần đặt class sao cho phù hợp với chức năng.
+1. **Check sử dụng**: Có check sử dụng bọc toàn bộ module bằng Liquid.
+2. **Đặt class theo quy tắc**: Đặt class theo class được cung cấp. Ví dụ: `home-banner` => `home-banner-demo`, `home-banner-demo-wrap`, `home-banner-demo-item`. Lưu ý: đây chỉ là ví dụ, bạn cần đặt class sao cho phù hợp với chức năng.
 3. **Settings các nội dung cứng**: Dùng Liquid để settings các nội dung cứng.
 4. **Render đầy đủ bằng HTML**: Render đầy đủ bằng HTML, không dùng JS để render bất kỳ phần nào.
-5. **Render nhiều Item**: Nếu cần render nhiều item giống nhau, sử dụng vòng lặp `for`. Mỗi item đều có check ẩn hiện đầy đủ.
+5. **Render nhiều item**: Nếu cần render nhiều item giống nhau, sử dụng vòng lặp `for`. Mỗi item đều có check ẩn hiện đầy đủ.
 6. **Hình ảnh responsive**: Hình ảnh `img` có responsive `picture` đầy đủ, settings dạng `asset_url`.
 
 ## Ví dụ về các module
