@@ -1,4 +1,5 @@
 Ngôn ngữ chính: HTML, SCSS, JS, Liquid, Platform là Haravan
+- Plugin Jquery, Swiper, Slick
 - Bỏ qua thẻ Head, chỉ cần xây dựng các Modaule dưới dạng Section
 - File code chính là Index.html
 - File settings tương ứng cho Liquid là settings.html
@@ -8,6 +9,7 @@ Ngôn ngữ chính: HTML, SCSS, JS, Liquid, Platform là Haravan
 
 * Rule dùng Liquid:
 - Nếu trong dùng for, dùng capture bọc settings chứ đừng dùng assign
+- Image sẽ settings dưới dạng asset_url, đuôi .png
 
 * Về Module ở file index.html
 - Module có Check sử dụng bằng Liquid
@@ -15,7 +17,7 @@ Ngôn ngữ chính: HTML, SCSS, JS, Liquid, Platform là Haravan
 - Có dùng Liquid để settings các nội dung cứng
 - Render đầy đủ bằng HTML, đừng dùng JS để render bất kì phần nào
 - Trường hợp cần Render nhiều Item giống nhau, hãy sử dụng vòng for, và mỗi item đều có check ẩn hiện đầy đủ
-- Hình ảnh Img có responsive Picture đầy đủ
+- Hình ảnh img có responsive Picture đầy đủ, settings dạng asset_url
 
 Ví dụ về Module có nhiều Item
 {%- for i in (1..3) -%}
