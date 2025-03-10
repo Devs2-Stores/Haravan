@@ -1,3 +1,4 @@
+** Ví dụ về cấu trúc cho File settings.html **
 <fieldset>
 	<legend>1. Thiết lập tổng quát</legend>
 	<div class="row">
