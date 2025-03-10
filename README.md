@@ -16,7 +16,8 @@ Thư mục cần xây dựng render bao gồm 2 file:
 3. **Asset URL cho hình ảnh**: Thẻ hình ảnh sẽ được settings dưới dạng `asset_url`, với đuôi `.png`.
 
 ## Quy tắc cho file `settings.html`
-- Dùng file `settings.html` mẫu để tạo cấu trúc tương tự.
+1. **Cách sử dụng**: Dùng file `settings.html` trong cấu trúc Repo mẫu để tạo cấu trúc tương tự.
+2. **Lưu ý**: Không dùng được code Liquid trong file này.
 
 ## Quy tắc cho file `index.liquid`
 1. **Check sử dụng**: Module có Check sử dụng, bọc toàn bộ module bằng Liquid.
