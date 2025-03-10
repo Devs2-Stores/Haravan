@@ -11,11 +11,11 @@ Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 - Dùng file settings.html mẫu để tạo cấu trúc tương tự
 
 * Về Module ở file index.liquid
-- Module có Check sử dụng bằng Liquid
+- Module có Check sử dụng bọc toàn bộ Module bằng Liquid
 - Các đặt class theo Class tôi cung cấp: Ví dụ tôi cung cấp Class: home-banner => home-banner-demo, home-banner-demo-wrap, home-banner-demo-item... Lưu ý là mình chỉ đặt ví dụ, nhờ bạn đặt class sao cho hay tương ứng với chức năng đang xây
 - Có dùng Liquid để settings các nội dung cứng
 - Render đầy đủ bằng HTML, đừng dùng JS để render bất kì phần nào
-- Trường hợp cần Render nhiều Item giống nhau, hãy sử dụng vòng for, và mỗi item đều có check ẩn hiện đầy đủ
+- Trường hợp cần Render nhiều Item giống nhau, hãy sử dụng vòng for (** Ví dụ về Module có nhiều Item **), và mỗi item đều có check ẩn hiện đầy đủ
 - Hình ảnh img có responsive Picture đầy đủ, settings dạng asset_url
 
 ** Ví dụ về Module có 1 item
@@ -30,7 +30,7 @@ Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 </div>
 {%- endif -%}
 
-** Ví dụ về Module có nhiều Item
+** Ví dụ về Module có nhiều Item **
 {%- for i in (1..3) -%}
 	{%- capture check -%}home_slider_item_check_{{ i }}{%- endcapture -%}
 	{%- capture title -%}home_slider_item_title_{{ i }}{%- endcapture -%}
