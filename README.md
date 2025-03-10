@@ -18,7 +18,19 @@ Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 - Trường hợp cần Render nhiều Item giống nhau, hãy sử dụng vòng for, và mỗi item đều có check ẩn hiện đầy đủ
 - Hình ảnh img có responsive Picture đầy đủ, settings dạng asset_url
 
-Ví dụ về Module có nhiều Item
+** Ví dụ về Module có 1 item
+{%- if settings.home_banner_check -%}
+<div class="home-demo">
+	<picture>
+		<source media="(min-width: 767px)" srcset="{{ 'home_banner_desktop.png' | asset_url }}"/>
+		<source media="(min-width: 0)" srcset="{{ 'home_banner_mobile.png' | asset_url }}"/>
+		<img width="" height="" loading="lazy" decoding="async" src="{{ 'home_banner_desktop.png' | asset_url }}" alt="{{ settings.home_banner_alt | escape }}"/>
+	</picture>
+	<span>{{ settings.home_banner_title }}</span>
+</div>
+{%- endif -%}
+
+** Ví dụ về Module có nhiều Item
 {%- for i in (1..3) -%}
 	{%- capture check -%}home_slider_item_check_{{ i }}{%- endcapture -%}
 	{%- capture title -%}home_slider_item_title_{{ i }}{%- endcapture -%}
