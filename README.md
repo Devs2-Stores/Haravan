@@ -17,11 +17,16 @@ Ngôn ngữ chính: HTML, SCSS, JS, Liquid, Platform là Haravan
 - Trường hợp cần Render nhiều Item giống nhau, hãy sử dụng vòng for, và mỗi item đều có check ẩn hiện đầy đủ
 - Hình ảnh Img có responsive Picture đầy đủ
 
- Ví dụ về Module có nhiều Item
+Ví dụ về Module có nhiều Item
 {%- for i in (1..3) -%}
 	{%- capture check -%}home_slider_item_check_{{ i }}{%- endcapture -%}
 	{%- capture title -%}home_slider_item_title_{{ i }}{%- endcapture -%}
+ 	{%- capture image -%}home_slider_item_image_{{ i }}.png{%- endcapture -%}
+  	{%- capture alt -%}home_slider_item_alt_{{ i }}{%- endcapture -%}
 	{%- if settings[check] -%}
-	<div class="home-demo">{{ settings[title] }}</div>
+	<div class="home-demo">
+ 		<img src="{{ image | asset_url }}" alt="{{ settings[alt] | escape }}"/>
+ 		<span>{{ settings[title] }}</span>
+   	</div>
 	{%- endif -%}
 {%- endfor -%}
