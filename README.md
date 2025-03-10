@@ -33,7 +33,6 @@ File cần tạo, kết quả sẽ bao gồm 2 file:
 2. **index.liquid**: Beautifull code
 3. **settings.html**: Beautifull code, hình ảnh note kích thước đầy đủ
 
-
 ## Ví dụ về các module
 ### Module có 1 item
 ```liquid
@@ -102,11 +101,11 @@ File cần tạo, kết quả sẽ bao gồm 2 file:
             <td colspan="2"><input type="checkbox" name="home_slider_item_check_1" /></td>
         </tr>
         <tr>
-            <td colspan="1"><strong>Hình ảnh Desktop</strong></td>
+            <td colspan="1"><strong>Hình ảnh Desktop (1920x640)</strong></td>
             <td colspan="2"><input type="file" name="home_slider_item_imagelg_1.jpg" /></td>
         </tr>
         <tr>
-            <td colspan="1"><strong>Hình ảnh Mobile</strong></td>
+            <td colspan="1"><strong>Hình ảnh Mobile (800x800)</strong></td>
             <td colspan="2"><input type="file" name="home_slider_item_imagexs_1.jpg" /></td>
         </tr>
         <tr>
@@ -136,11 +135,11 @@ File cần tạo, kết quả sẽ bao gồm 2 file:
             <td colspan="2"><input type="checkbox" name="home_slider_item_check_2"/></td>
         </tr>
         <tr>
-            <td colspan="1"><strong>Hình ảnh Desktop</strong></td>
+            <td colspan="1"><strong>Hình ảnh Desktop (1920x640)</strong></td>
             <td colspan="2"><input type="file" name="home_slider_item_imagelg_2.jpg"/></td>
         </tr>
         <tr>
-            <td colspan="1"><strong>Hình ảnh Mobile</strong></td>
+            <td colspan="1"><strong>Hình ảnh Mobile (800x800)</strong></td>
             <td colspan="2"><input type="file" name="home_slider_item_imagexs_2.jpg"/></td>
         </tr>
         <tr>
