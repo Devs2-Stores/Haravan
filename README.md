@@ -18,7 +18,7 @@ File cần tạo, kết quả sẽ bao gồm 2 file:
 ## Quy tắc cho file `settings.html`
 1. **Cách sử dụng**: Dùng file `settings.html` trong cấu trúc Repo mẫu để tạo cấu trúc tương tự.
 2. **Lưu ý**: Không dùng được code Liquid trong file này.
-3. **Hình ảnh**: Ghi chú kích thước hình ảnh trong phần mô tả của settings.
+3. **Hình ảnh**: Ghi chú kích thước hình ảnh trong phần mô tả của settings, settings name có đuôi ảnh luôn, ví dụ: name="image.png".
 
 ## Quy tắc cho file `index.liquid`
 1. **Kiểm tra sử dụng**: Dùng Liquid để bao toàn bộ module.
