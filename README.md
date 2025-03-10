@@ -1,13 +1,14 @@
 Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 - Plugin Jquery, Swiper, Slick
-- Cấu trúc thư mục bỏ qua thẻ Head của HTML, File CSS, file JS.
-- File code chính là index.liquid
-- File settings tương ứng cho Liquid là settings.html
+- Cấu trúc thư mực bao gồm 2 File: index.liquid, settings.html
 
 * Rule dùng Liquid:
 - Nếu trong dùng for, dùng capture bọc settings chứ đừng dùng assign
 - Nếu không có dùng For, dùng settings.name trực tiếp vào luôn.
 - Image sẽ settings dưới dạng asset_url, đuôi .png
+
+* Về file settings.html
+- Dùng file settings.html mẫu để tạo cấu trúc tương tự
 
 * Về Module ở file index.liquid
 - Module có Check sử dụng bằng Liquid
