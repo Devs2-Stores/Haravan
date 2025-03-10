@@ -8,14 +8,6 @@ Ngôn ngữ chính: HTML, SCSS, JS, Liquid, Platform là Haravan
 
 * Rule dùng Liquid:
 - Nếu trong dùng for, dùng capture bọc settings chứ đừng dùng assign
-  Ví dụ:
-  {%- for i in (1..3) -%}
-		{%- capture check -%}home_slider_item_check_{{ i }}{%- endcapture -%}
-    {%- capture title -%}home_slider_item_title_{{ i }}{%- endcapture -%}
-    {%- if settings[check] -%}
-    <div class="home-demo">{{ settings[title] }}</div>
-    {%- endif -%}
-  {%- endfor -%}
 
 * Về Module ở file index.html
 - Module có Check sử dụng bằng Liquid
@@ -24,3 +16,12 @@ Ngôn ngữ chính: HTML, SCSS, JS, Liquid, Platform là Haravan
 - Render đầy đủ bằng HTML, đừng dùng JS để render bất kì phần nào
 - Trường hợp cần Render nhiều Item giống nhau, hãy sử dụng vòng for, và mỗi item đều có check ẩn hiện đầy đủ
 - Hình ảnh Img có responsive Picture đầy đủ
+
+ Ví dụ về Module có nhiều Item
+{%- for i in (1..3) -%}
+	{%- capture check -%}home_slider_item_check_{{ i }}{%- endcapture -%}
+	{%- capture title -%}home_slider_item_title_{{ i }}{%- endcapture -%}
+	{%- if settings[check] -%}
+	<div class="home-demo">{{ settings[title] }}</div>
+	{%- endif -%}
+{%- endfor -%}
