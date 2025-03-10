@@ -1,11 +1,8 @@
-Ngôn ngữ chính: HTML, SCSS, JS, Liquid, Platform là Haravan
+Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 - Plugin Jquery, Swiper, Slick
-- Bỏ qua thẻ Head, chỉ cần xây dựng các Modaule dưới dạng Section
+- Cấu trúc bỏ qua thẻ Head, File CSS, file JS, chỉ cần xây dựng các Modaule dưới dạng Section ở file index.html và có settings ở file settings.html
 - File code chính là Index.html
 - File settings tương ứng cho Liquid là settings.html
-
-* Rule code SCSS
-- Render dưới dạng SCSS, responsive ngay tại chỗ dòng code
 
 * Rule dùng Liquid:
 - Nếu trong dùng for, dùng capture bọc settings chứ đừng dùng assign
