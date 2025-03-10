@@ -21,6 +21,8 @@ Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 - Trường hợp cần Render nhiều Item giống nhau, hãy sử dụng vòng for (** Ví dụ về Module có nhiều Item **), và mỗi item đều có check ẩn hiện đầy đủ
 - Hình ảnh img có responsive Picture đầy đủ, settings dạng asset_url
 
+*** Lưu ý bên dưới chỉ là các ví dụ demo, chỉ Render các trường được Asset đề cập tới thôi nhé ***
+
 ** Ví dụ về Module có 1 item
 {%- if settings.home_banner_check -%}
 <div class="home-banner">
@@ -75,224 +77,74 @@ Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 
 ** Ví dụ về HTML trong settings.html **
 <fieldset>
-  <legend>Home Banner</legend>
-  <div class="row">
-    <div class="col-sm-5">
-      <img src="" alt="">
-    </div>
-    <div class="col-sm-7">
-      <fieldset>
-        <legend>1. Home Slider</legend>
-        <table>
-          <tr>
-            <td colspan="2">
-              <h3>Home Slider Item 1</h3>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Kích hoạt Slider</strong>
-            </td>
-            <td colspan="2">
-              <input type="checkbox" name="home_slider_item_check_1" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Hình ảnh Desktop 1920x640</strong>
-            </td>
-            <td colspan="2">
-              <input type="file" name="home_slider_item_imagelg_1.jpg" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Hình ảnh Mobile 600x600</strong>
-            </td>
-            <td colspan="2">
-              <input type="file" name="home_slider_item_imagexs_1.jpg" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Sử dụng nội dung</strong>
-            </td>
-            <td colspan="2">
-              <input type="checkbox" name="home_slider_item_usecontent_1" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Tiêu đề chính</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_title_1" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Tiêu đề phụ</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_subtitle_1" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Nội dung nút nhấn</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_cta_1" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>link liên kết</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_link_1" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <h3>Home Slider Item 2</h3>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Kích hoạt Slider</strong>
-            </td>
-            <td colspan="2">
-              <input type="checkbox" name="home_slider_item_check_2" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Hình ảnh Desktop 1920x640</strong>
-            </td>
-            <td colspan="2">
-              <input type="file" name="home_slider_item_imagelg_2.jpg" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Hình ảnh Mobile 600x600</strong>
-            </td>
-            <td colspan="2">
-              <input type="file" name="home_slider_item_imagexs_2.jpg" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Sử dụng nội dung</strong>
-            </td>
-            <td colspan="2">
-              <input type="checkbox" name="home_slider_item_usecontent_2" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Tiêu đề chính</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_title_2" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Tiêu đề phụ</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_subtitle_2" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Nội dung nút nhấn</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_cta_2" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>link liên kết</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_link_2" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <h3>Home Slider Item 3</h3>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Kích hoạt Slider</strong>
-            </td>
-            <td colspan="2">
-              <input type="checkbox" name="home_slider_item_check_3" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Hình ảnh Desktop 1920x640</strong>
-            </td>
-            <td colspan="2">
-              <input type="file" name="home_slider_item_imagelg_3.jpg" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Hình ảnh Mobile 600x600</strong>
-            </td>
-            <td colspan="2">
-              <input type="file" name="home_slider_item_imagexs_3.jpg" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Sử dụng nội dung</strong>
-            </td>
-            <td colspan="2">
-              <input type="checkbox" name="home_slider_item_usecontent_3" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Tiêu đề chính</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_title_3" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Tiêu đề phụ</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_subtitle_3" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>Nội dung nút nhấn</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_cta_3" />
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1">
-              <strong>link liên kết</strong>
-            </td>
-            <td colspan="2">
-              <input type="text" name="home_slider_item_link_3" />
-            </td>
-          </tr>
-        </table>
-      </fieldset>
-    </div>
-  </div>
+  	<legend>Home Slider</legend>
+	<table>
+		<tr><td colspan="2"><h3>Home Slider Item 1</h3></td></tr>
+		<tr>
+		  <td colspan="2"><strong>Kích hoạt Slider</strong></td>
+		  <td colspan="2"><input type="checkbox" name="home_slider_item_check_1" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Hình ảnh Desktop</strong></td>
+		  <td colspan="2"><input type="file" name="home_slider_item_imagelg_1.jpg" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Hình ảnh Mobile</strong></td>
+		  <td colspan="2"><input type="file" name="home_slider_item_imagexs_1.jpg" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Sử dụng nội dung</strong></td>
+		  <td colspan="2"><input type="checkbox" name="home_slider_item_usecontent_1" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Tiêu đề chính</strong></td>
+		  <td colspan="2"><textarea name="home_slider_item_title_1" ></textarea></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Tiêu đề phụ</strong></td>
+		  <td colspan="2"><textarea name="home_slider_item_subtitle_1" ></textarea></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Nội dung nút nhấn</strong></td>
+		  <td colspan="2"><input type="text" name="home_slider_item_cta_1" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Link liên kết</strong></td>
+		  <td colspan="2"><input type="text" name="home_slider_item_link_1" /></td>
+		</tr>
+		
+		<tr><td colspan="2"><h3>Home Slider Item 2</h3></td></tr>
+		<tr>
+		  <td colspan="2"><strong>Kích hoạt Slider</strong></td>
+		  <td colspan="2"><input type="checkbox" name="home_slider_item_check_2" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Hình ảnh Desktop</strong></td>
+		  <td colspan="2"><input type="file" name="home_slider_item_imagelg_2.jpg" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Hình ảnh Mobile</strong></td>
+		  <td colspan="2"><input type="file" name="home_slider_item_imagexs_2.jpg" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Sử dụng nội dung</strong></td>
+		  <td colspan="2"><input type="checkbox" name="home_slider_item_usecontent_2" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Tiêu đề chính</strong></td>
+		  <td colspan="2"><textarea name="home_slider_item_title_2" ></textarea></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Tiêu đề phụ</strong></td>
+		  <td colspan="2"><textarea name="home_slider_item_subtitle_2" ></textarea></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Nội dung nút nhấn</strong></td>
+		  <td colspan="2"><input type="text" name="home_slider_item_cta_2" /></td>
+		</tr>
+		<tr>
+		  <td colspan="1"><strong>Link liên kết</strong></td>
+		  <td colspan="2"><input type="text" name="home_slider_item_link_2" /></td>
+		</tr>
+	</table>
 </fieldset>
