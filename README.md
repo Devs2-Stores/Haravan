@@ -18,6 +18,7 @@ Thư mục cần xây dựng render bao gồm 2 file:
 ## Quy tắc cho file `settings.html`
 1. **Cách sử dụng**: Dùng file `settings.html` trong cấu trúc Repo mẫu để tạo cấu trúc tương tự.
 2. **Lưu ý**: Không dùng được code Liquid trong file này.
+3. **Hình ảnh**: Note luôn kích thước được cung cấp
 
 ## Quy tắc cho file `index.liquid`
 1. **Check sử dụng**: Module có Check sử dụng, bọc toàn bộ module bằng Liquid.
