@@ -7,3 +7,4 @@ Ngôn ngữ chính: HTML, CSS, JS, Liquid, Platform là Haravan
 * Về Module ở file index.html
 - Các đặt class: Ví dụ: home-slider, home-slider-wrap, home-slider-item...
 - Có dùng Liquid để settings các nội dung cứng
+- Render đầy đủ bằng HTML, đừng dùng JS để render bất kì phần nào
