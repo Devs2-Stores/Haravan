@@ -1,5 +1,5 @@
 Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
-- Cấu trúc thư mục bao gồm 2 File: index.liquid, settings.html
+- Cấu trúc thư mục cần xây dựng render ra bao gồm 2 File: index.liquid, settings.html
 
 * Rule dùng Liquid:
 - Nếu trong dùng for, dùng capture bọc settings chứ đừng dùng assign
