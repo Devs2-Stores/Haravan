@@ -1,7 +1,7 @@
 Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 - Plugin Jquery, Swiper, Slick
-- Cấu trúc bỏ qua thẻ Head của HTML, File CSS, file JS.
-- File code chính là Index.liquid
+- Cấu trúc thư mục bỏ qua thẻ Head của HTML, File CSS, file JS.
+- File code chính là index.liquid
 - File settings tương ứng cho Liquid là settings.html
 
 * Rule dùng Liquid:
@@ -9,7 +9,7 @@ Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 - Nếu không có dùng For, dùng settings.name trực tiếp vào luôn.
 - Image sẽ settings dưới dạng asset_url, đuôi .png
 
-* Về Module ở file index.html
+* Về Module ở file index.liquid
 - Module có Check sử dụng bằng Liquid
 - Các đặt class theo Class tôi cung cấp: Ví dụ tôi cung cấp Class: home-banner => home-banner-demo, home-banner-demo-wrap, home-banner-demo-item... Lưu ý là mình chỉ đặt ví dụ, nhờ bạn đặt class sao cho hay tương ứng với chức năng đang xây
 - Có dùng Liquid để settings các nội dung cứng
