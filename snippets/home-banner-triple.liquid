@@ -1,0 +1,37 @@
+{%- if settings.home_fbanner_check -%}
+<section id="section-banner-tripple" class="section-distance">
+	<div class="container">
+		<div class="list-banner">
+			{%- for i in (1..3) -%}
+			{%- capture image -%}f1_banner_{{ i }}_img.jpg{%- endcapture -%}
+			{%- capture title -%}f1_banner_{{ i }}_title{%- endcapture -%}
+			{%- capture content -%}f1_banner_{{ i }}_subtitle{%- endcapture -%}
+			{%- capture link -%}f1_banner_{{ i }}_link{%- endcapture -%}
+			{%- capture button -%}f1_banner_{{ i }}_button{%- endcapture -%}
+			<div class="banner-item wow bounceIn">
+				<div class="banner-item__image">
+					<img loading="lazy" decoding="async"
+						 src="{{ image | asset_url  }}" alt="{{ settings[title] | default: shop.name }}">
+				</div>
+				<div class="banner-item__content">
+					{%- if settings[title] != blank-%}
+					<h3 class="banner-title">{{settings[title]}}</h3>
+					{%- endif -%}
+					{%- if settings[content] != blank -%}
+					<p class="banner-desc">{{settings[content]}}</p>
+					{%- endif -%}
+					{%- if settings[link] != blank and settings[button]-%}
+					<a class="btn-banner" href="{{settings[link]}}">
+						<span>{{settings[button]}}</span>
+					</a>
+					{%- endif -%}
+				</div>
+				{%- if settings[link] != blank -%}
+				<a href="{{settings[link]}}" class="link-hover" aria-label="Banner"></a>
+				{%- endif-%}
+			</div>
+			{%- endfor -%}
+		</div>
+	</div>
+</section>
+{%- endif -%}

@@ -1,0 +1,37 @@
+{%- if settings.home_preview_check -%}
+<div class="home-preview section-distance">
+	<div class="container">
+		<div class="home-preview-flex-td">
+			<h2 class="home-preview-support-header">{{ settings.home_preview_support_header | strip }}</h2>
+			{%- if settings.home_preview_header != "" && settings.home_preview_header != _blank -%}
+			<h3 class="home-preview-header">
+				<a href="{{ settings.home_preview_header_link | escape}}" title="{{ settings.home_preview_header | escape }}">
+					{{ settings.home_preview_header | strip }}
+				</a>
+			</h3>
+			{%- endif -%}
+			<hr class="primary-horizontal-line">
+			<div class="home-preview-items-flex-lr">
+				{%- for i in (1..3) -%}
+				<div class="home-preview-item">
+					{%- capture image -%}home_preview_item_image_{{ i }}.jpg{%- endcapture -%}
+					{%- capture title -%}home_preview_item_image_title_{{ i }}{%- endcapture -%}
+					{%- capture header -%}home_preview_item_header_{{ i }}{%- endcapture -%}
+					{%- capture extra_header -%}home_item_preview_extra_header_{{ i }}{%- endcapture -%}
+					{%- capture content -%}home_preview_item_content_{{ i }}{%- endcapture -%}
+					<div class="home-preview-avatar-container">
+						{% include "image-clone" with d_width:"500", d_height: "500", m_width:"", m_height: "", count: 1, no_MobileImage: 1 %}
+					</div>
+					<div class="home-preview-item-info">
+						<h4 class="home-preview-item-header">{{ settings[header] | strip }}</h4>
+						<h5 class="home-preview-item-extra-header">{{ settings[extra_header] | strip }}</h5>
+						<hr class="secondary-horizontal-line">
+						<p class="home-preview-item-content">{{ settings[content] | strip }}</p>
+					</div>
+				</div>
+				{%- endfor -%}
+			</div>
+		</div>
+	</div>
+</div>
+{%- endif -%}

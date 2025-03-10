@@ -1,0 +1,24 @@
+{%- if settings.home_insta_check -%}
+<div class="home-insta">
+	<div class="container-fluid">
+		<h2><a href="{{ settings.home_insta_link }}" aria-label="{{ settings.home_insta_title | escape }}">{{ settings.home_insta_title }}</a></h2>
+		<div class="home-insta-items">
+			{%- for i in (1..10) -%}
+			{%- capture check -%}home_insta_item_check_{{ i }}{%- endcapture -%}
+			{%- capture image -%}home_insta_item_image_{{ i }}.jpg{%- endcapture -%}
+			{%- capture alt -%}home_insta_item_alt_{{ i }}{%- endcapture -%}
+			{%- capture link -%}home_insta_item_link_{{ i }}{%- endcapture -%}
+			{%- if settings[check] -%}
+			<div class="home-insta-item">
+				<a href="{{ settings[link] }}" aria-label="{{ settings[alt] }}">
+					<img loading="lazy" decoding="async" width="600" height="600" src="{{ image | asset_url  }}" alt="{{ settings[alt] }}" title="{{ settings[alt] }}">
+					<strong>{{ settings[alt] }}</strong>
+					<i class="fab fa-instagram"></i>
+				</a>
+			</div>
+			{%- endif -%} 
+			{%- endfor -%}
+		</div>
+	</div>
+</div>
+{%- endif -%}

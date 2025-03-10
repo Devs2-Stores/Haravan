@@ -1,0 +1,31 @@
+{%- if settings.home_banner_slider_check -%}
+<section class="home-banner-slider section-distance">
+	<div class="container">
+		<div class="home-banner-slider-head">
+			<h2 class="home-banner-slider-header">{{ settings.home_banner_slider_title }}</h2> 
+			<p class="home-banner-slider-extra-header">{{ settings.home_banner_slider_content }}</p>
+		</div>
+		<div class="forth_home">
+			<div class="forth_home_content slick-slider">
+				{%- for i in (1..10) -%}
+				{%- capture check -%}home_banner_slider_item_check_{{ i }}{%- endcapture -%}
+				{%- capture icon -%}home_banner_slider_item_icon_{{ i }}.png{%- endcapture -%}
+				{%- capture image -%}home_banner_slider_item_image_{{ i }}.png{%- endcapture -%}
+				{%- capture alt -%}home_banner_slider_item_alt_{{ i }}{%- endcapture -%}
+				{%- capture link -%}home_banner_slider_item_link_{{ i }}{%- endcapture -%}
+				{%- if settings[check] -%}
+				<a href="{{ settings[link] }}" class="forth_home_item">
+					<div class="bg_images">
+						<img src="{{ icon |  img_url: 'medium'   | asset_url  }}" alt="{{ settings[alt] | escape  }}" >
+					</div>
+					<div class="detail_images">
+						<img src="{{ image |  img_url: 'grande'  | asset_url  }}" alt="{{ settings[alt] | escape }}">
+					</div>
+				</a>
+				{%- endif -%}
+				{%- endfor -%}
+			</div>
+		</div>
+	</div>
+</section>
+{%- endif -%}

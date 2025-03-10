@@ -1,0 +1,27 @@
+{% if settings.home_vendor_check %}
+<section class="home-vendor section-distance">
+	<div class="container section-wrapper">
+		<div class="titleStyle1">
+			<h2 class="title"><a href="{{ settings.home_product_small_header_link }}">{{ settings.home_vendor_header }}</a></h2>
+		</div>
+		<div class="home-vendor-flex">
+			<div class="home-vendor-list">
+				{%- for i in (1..10) -%}
+				{%- capture check -%}home_vendor_item_check_{{ i }}{%- endcapture -%}
+				{%- if settings[check] -%}
+				{%- capture image -%}home_vendor_item_image_{{ i }}.jpg{%- endcapture -%}
+				{%- capture title -%}home_vendor_item_title_{{ i }}{%- endcapture -%}
+				{%- capture link -%}home_vendor_item_link_{{ i }}{%- endcapture -%}
+				<div class="home-vendor-item">
+					<div class="home-vendor-container">
+						{% include "Image-clone" with d_width:"500", d_height: "325", m_width:"", m_height: "", count: 1, classes : "", no_MobileImage: 1 %}
+						<strong>{{ settings[title] }}</strong>
+					</div>
+				</div>
+				{%- endif -%}
+				{%- endfor -%}
+			</div>
+		</div>
+	</div>
+</section>
+{% endif %}

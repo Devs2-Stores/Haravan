@@ -1,0 +1,35 @@
+{%- if settings.home_banner_intro_check -%}
+<div class="home-banner-intro section-distance">
+	<div class="container">
+		<div class="home-banner-intro-container">
+			<div class="home-banner-intro-flex">
+				<div class="home-banner-intro-info-container">
+					{%- capture link -%}home_banner_intro_button_link{%- endcapture -%}
+					{%- if settings.home_banner_intro_extra_header != _blank && settings.home_banner_intro_extra_header != "" -%}
+					<h2 class="home-banner-intro-extra-header">
+						<a href="{{ settings[link] | escape }}" title="{{ settings.home_banner_intro_extra_header | escape }}">
+							{{ settings.home_banner_intro_extra_header | strip }}
+						</a>
+					</h2>
+					{%- endif -%}
+					<p class="home-banner-intro-content">{{ settings.home_banner_intro_content | strip | newline_to_br }}</p>
+					{%- capture button_content -%}home_banner_intro_button_content{%- endcapture -%}
+
+					<a href="{{ settings[link] }}" title="{{ settings[button_content] | escape }}">
+						{% include "button-clone" with is_primary: 1 %}
+					</a>
+				</div>
+				<a class="home-banner-intro-image-container" href="{{ settings[link] }}" aria-label="{{ settings[title] | escape }}" title="{{ settings[title] | escape  }}">
+					{%- capture image-%}home_banner_intro_image.jpg{%- endcapture -%}
+					{%- capture title -%}home_banner_intro_image_title{%- endcapture -%}
+					{%- capture link -%}home_banner_intro_image_link{%- endcapture -%}
+					<picture>
+						<img loading="lazy" decoding="async" fetchpriority="low"
+							 width="1080" height="1080" src="{{ image | asset_url  }}" alt="{{ settings[title] | escape  }}" title="{{ settings[title] | escape  }}">
+					</picture>
+				</a>
+			</div>	
+		</div>
+	</div>
+</div>
+{%- endif -%}

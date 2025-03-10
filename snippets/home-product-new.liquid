@@ -1,0 +1,35 @@
+{%- if settings.home_product_new_check -%}
+<div class="home-product-new section-distance">
+	<div class="home-product-info-container">
+		<div class="container">
+			<h2 class="home-product-info-support-header">{{ settings.home_product_new_info_support_header | strip }}</h2>
+			{%- if settings.home_product_new_info_header != _blank && settings.home_product_new_info_header != "" -%}
+			<h3 class="home-product-info-header">
+				<a href="{{ settings.home_product_new_info_header_link | escape }}" title="{{ settings.home_product_new_info_header | escape }}">
+					{{ settings.home_product_new_info_header | strip }}
+				</a>
+			</h3>
+			{%- endif -%}
+			<div class="home-product-info-slider">
+				{%- if collections[settings.home_product_new_collections] -%}
+				{%- if collections[settings.home_product_new_collections].products_count > 0 -%}
+				{%- for product in collections[settings.home_product_new_collections].products limit: settings.home_product_new_limit -%}
+				{%- include "product-item-action" -%}
+				{%- endfor -%}
+				{%- else -%}
+				<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+				{%- endif -%}
+				{%- else -%}
+				{%- if collections.all.products_count > 0 -%}
+				{%- for product in collections.all.products limit: settings.home_product_new_limit -%}
+				{%- include "product-item-action" -%}
+				{%- endfor -%}
+				{%- else -%}
+				<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+				{%- endif -%}
+				{%- endif -%}
+			</div>
+		</div>
+	</div>
+</div>
+{%- endif -%}

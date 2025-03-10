@@ -1,0 +1,25 @@
+{%- if settings.home_banner_full_two_check -%}
+<section class="home-banner-full home-banner-full-two section-distance">
+	<div class="container-fluid">
+		<div class="home-banner-full-item">
+			{%- capture image_d -%}home_banner_full_two_image_d.jpg{%- endcapture -%}
+			{%- capture image_m -%}home_banner_full_two_image_m.jpg{%- endcapture -%}
+			{%- capture title -%}home_banner_full_two_image_title{%- endcapture -%}
+			{%- capture link -%}home_banner_full_two_image_link{%- endcapture -%} 
+			{%- capture header -%}home_banner_full_two_header{%- endcapture -%}
+			{%- capture text -%}home_banner_full_two_text{%- endcapture -%}
+			{%- capture button_text -%}home_banner_full_two_button_text{%- endcapture -%}
+			<div class="home-banner-full-item-image">
+				{% include "image-clone" with d_width:"2000", d_height: "1000", m_width:"1000", m_height: "1000", count: 1, classes : "", no_MobileImage: 0 %}
+			</div>
+			<div class="home-banner-full-item-info">
+				<h2 class="home-banner-full-item-header">{{ settings[header] | strip }}</h2>
+				<p class="home-banner-full-item-text">{{ settings[text] | strip }}</p>
+				{%- if settings[button_text] != blank && settings[button_text] != "" -%}
+				<a class="primary-btn" href="{{ settings[link] | escape }}" title="{{ settings[button_text] | escape }}"><span>{{ settings[button_text] | strip | truncate: 20 }}</span></a>
+				{%- endif -%}
+			</div>
+		</div>
+	</div>
+</section>
+{%- endif -%}

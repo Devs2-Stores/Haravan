@@ -1,0 +1,38 @@
+{%- if settings.home_product_banner_check -%}
+{%- capture banners -%}
+{%- for i in (1..2) -%}
+{%- capture image -%}home_product_banner_image_{{ forloop.index }}.jpg{%- endcapture -%}
+{%- capture link -%}home_product_banner_image_link_{{ i }}{%- endcapture -%}
+<a class="home-product-banner-image home-product-banner-image-{{ i }}" href="{{ settings[link] }}" aria-label="{{ settings[title] | escape }}" title="{{ settings[title] | escape  }}">
+	{% include "image-clone" with d_width:"960", d_height: "960", m_width:"", m_height: "", count: 1, no_MobileImage: 1 %}
+</a>
+{%- endfor -%}
+{%- endcapture -%}
+<div class="home-product-banner section-distance">
+	<div class="container-fluid">
+		<div class="home-product-banner-flex">
+			<div class="home-product-banner-info-slider">
+				{%- if collections[settings.home_product_banner_collections] -%}
+				{%- if collections[settings.home_product_banner_collections].products_count > 0 -%}
+				{%- for product in collections[settings.home_product_banner_collections].products limit: settings.home_product_banner_limit -%}
+				{%- include "product-item" -%}
+				{%- endfor -%}
+				{{ banners }} <!-- Render Banners -->
+				{%- else -%}
+				<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+				{%- endif -%}
+				{%- else -%}
+				{%- if collections.all.products_count > 0 -%}
+				{%- for product in collections.all.products limit: settings.home_product_banner_limit -%}
+				{%- include "product-item" with sectionName: "new" -%}
+				{%- endfor -%}
+				{{ banners }} <!-- Render Banners -->
+				{%- else -%}
+				<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+				{%- endif -%}
+				{%- endif -%}
+			</div>
+		</div>
+	</div>
+</div>
+{%- endif -%}

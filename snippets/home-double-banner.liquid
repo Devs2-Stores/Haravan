@@ -1,0 +1,40 @@
+{%- if settings.home_double_banner_check -%}
+<div class="container">
+	<div class="home-double-banner section-distance">
+		<div class="home-double-banner-flex-tw">
+			{%- for i in (1..3) -%}
+			{%- capture support_header -%}home_double_banner_support_header_{{ i }}{%- endcapture -%}
+			{%- capture header -%}home_double_banner_header_{{ i }}{%- endcapture -%}
+			{%- capture content -%}home_double_banner_content_{{ i }}{%- endcapture -%}
+			{%- capture link -%}home_double_banner_button_link_{{ i }}{%- endcapture -%}
+			<div class="home-double-banner-flex-lr">
+				<div class="home-double-banner-info-container">
+					<div class="home-double-banner-info-flex-container">
+						<h2 class="home-double-banner-support-header">{{ settings[support_header] | strip }}</h2>
+						{%- if settings[header] != _blank && settings[header] != "" -%}
+						<h3 class="home-double-banner-header">
+							<a href="{{ settings[link] }}" title="{{ settings[header] }}">
+								{{ settings[header] | strip }}
+							</a>
+						</h3>
+						{%- endif -%}
+						<hr class="primary-horizontal-line">
+						<p class="home-double-banner-content">{{ settings[content] | strip }}</p>
+						{%- capture button_content -%}home_double_banner_button_content_{{ i }}{%- endcapture -%}
+						<a href="{{ settings[link] }}" title="{{ settings[button_content] | escape }}">
+							{% include "button-clone" with is_primary: 1 %}
+						</a>
+					</div>
+				</div>
+				{%- capture image -%}home_double_banner_image_{{ i }}.jpg{%- endcapture -%}
+				{%- capture title -%}home_double_banner_image_title_{{ i }}{%- endcapture -%}
+				{%- capture link -%}home_double_banner_image_link_{{ i }}{%- endcapture -%}
+				<a class="home-double-banner-image-container" href="{{ settings[link] }}" aria-label="{{ settings[title] | escape }}" title="{{ settings[title] | escape  }}">
+					{% include "image-clone" with d_width:"1000", d_height: "1000", m_width:"", m_height: "", count: 1, no_MobileImage: 1 %}
+				</a>
+			</div>
+			{%- endfor -%}
+		</div>
+	</div>
+</div>
+{%- endif -%}

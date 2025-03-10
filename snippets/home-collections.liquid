@@ -1,0 +1,25 @@
+{%- if settings.home_collections_check -%}
+<section class="home-collections section-distance">
+	<div class="container-fluid">
+		<div class="home-collections-flex">
+			<div class="home-collections-top">
+				<h2 class="home-collections-top-header"><a href="{{ settings.home_collections_header_link | strip }}" title="{{ settings.home_collections_header | strip }}">{{ settings.home_collections_header | strip }}</a></h2>
+			</div>
+			<div class="home-collections-bottom home-collections-slider">
+				{%- for i in (1..10) -%}
+				{%- capture check -%}home_collections_check_{{ i }}{%- endcapture -%}
+				{%- if settings[check] -%}
+				{%- capture image -%}home_collections_image_{{ i }}.jpg{%- endcapture -%}
+				{%- capture title -%}home_collections_image_title_{{ i }}{%- endcapture -%}
+				{%- capture link -%}home_collections_link_{{ i }}{%- endcapture -%}
+				<a href="{{ settings[link] | escape }}" title="{{ settings[title] | escape }}" class="home-collections-item">
+					{% include "image-clone" with d_width:"1000", d_height: "1000", m_width:"", m_height: "", count: 1, classes : "", no_MobileImage: 1 %}
+					<span class="home-collections-item-display-text">{{ settings[title] | strip }}</span>
+				</a>
+				{%- endif -%}
+				{%- endfor -%}
+			</div>			
+		</div>
+	</div>
+</section>
+{%- endif -%}

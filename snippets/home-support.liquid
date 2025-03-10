@@ -1,0 +1,33 @@
+{%- if settings.home_support_check -%}
+<div class="home-support section-distance">
+	<div class="container">
+		<div class="home-support-flex-lr">
+			{%- capture image -%}home_support_left_image.jpg{%- endcapture -%}
+			{%- capture title -%}home_support_left_image_title{%- endcapture -%}
+			{%- capture link -%}home_support_left_image_link{%- endcapture -%}
+			<a class="home-support-left" href="{{ settings[link] }}" aria-label="{{ settings[title] | escape }}" title="{{ settings[title] | escape  }}">
+				{% include "image-clone" with d_width:"2000", d_height: "1000", m_width:"", m_height: "", count: 1, no_MobileImage: 1 %}
+			</a>
+			<div class="home-support-right">
+				{%- for i in (1..4) -%}
+				{%- capture svg_icon -%}home_support_right_svg_icon_{{ i }}{%- endcapture -%}
+				{%- capture header -%}home_support_right_header_{{ i }}{%- endcapture -%}
+				{%- capture link -%}home_support_right_link_{{ i }}{%- endcapture -%}
+				{%- capture content -%}home_support_right_content_{{ i }}{%- endcapture -%}
+				<div class="home-support-right-item">
+					<a href="{{ settings[link] | escape }}" title="{{ settings[header] | escape }}" class="home-support-right-svg-container">
+						{%- if settings[svg_icon] != _blank && settings[svg_icon] != "" -%}
+						{{ settings[svg_icon] }}
+						{%- endif -%}
+					</a>
+					<div class="home-support-right-content">
+						<h2 class="home-support-right-header">{{ settings[header] | strip }}</h2>
+						<p class="home-support-right-content">{{ settings[content] | strip }}</p>
+					</div>
+				</div>
+				{%- endfor -%}
+			</div>
+		</div>
+	</div>
+</div>
+{%- endif -%}

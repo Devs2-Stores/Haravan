@@ -1,0 +1,70 @@
+{% if settings.home_group_tab_three_check %}
+<section class="section_index--group-tab section-distance">
+	<div class="container">
+		<div class="section_index--group-tab-head">
+			<div class="titleStyle1">
+				<span>{{ settings.home_group_tab_three_subtitle }}</span>
+				<h2>{{ settings.home_group_tab_three_title }}</h2>
+			</div>
+			<ul>
+				{% for i in (1..3) %}
+				{% capture check %}home_group_tab_three_item_check_{{ i }}{% endcapture %}
+				{% capture title %}home_group_tab_three_item_title_{{ i }}{% endcapture %}
+				{% capture flagHandle %}home_group_tab_three_item_handle_{{ i }}{% endcapture %}
+				{% capture mainHandle %}{{ settings[flagHandle] }}{% endcapture %}
+				{% if settings[check] %}
+				<li data-tab="{{ forloop.index }}" {% if forloop.first %}class="active"{% endif %}>
+					<a
+					   href="#"
+					   data-tab="{{ forloop.index }}"
+					   aria-label="{{ settings[title] }}"
+					   title="{{ settings[title] }}"
+					   >
+						{{- settings[title] -}}
+					</a>
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="section_index--group-tab-body">
+			<ul>
+				{% for i in (1..3) %}
+				{% capture check %}home_group_tab_three_item_check_{{ i }}{% endcapture %}
+				{% capture flagHandle %}home_group_tab_three_item_handle_{{ i }}{% endcapture %}
+				{% capture mainHandle %}{{ settings[flagHandle] }}{% endcapture %}
+				{% capture limit %}home_group_tab_three_item_limit_{{ i }}{% endcapture %}
+				{% if settings[check] %}
+				<li data-tab="{{ forloop.index }}" {% if forloop.first %}class="active"{% endif %}>
+					<div class="section_index--group-tab-body-products">
+						{% if mainHandle == blank %}
+						<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+						{% else %}
+						{% if collections[mainHandle] %}
+						{% if collections[mainHandle].products_count > 0 %}
+						{% for product in collections[mainHandle].products limit: settings[limit] %}
+						{% include 'product-item' %}
+						{% endfor %}
+						{% else %}
+						<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+						{% endif %}
+						{% else %}
+						{% if collections.all.products_count > 0 %}
+						{% for product in collections.all.products limit: settings[limit] %}
+						{% include 'product-item' %}
+						{% endfor %}
+						{% else %}
+						<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+						{% endif %}
+						{% endif %}
+						{% endif %}
+					</div>
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</section>
+
+{% endif %}

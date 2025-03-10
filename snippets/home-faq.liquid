@@ -1,0 +1,32 @@
+<section class="home-faq section-distance" style="background-image: url({{ 'home_faq_image.jpg' | asset_url  }})">
+	<div class="container">
+		<div class="home-faq-wrap">
+			<div class="home-faq-box">
+				<span class="subtitle-fstyle1">{{ settings.home_faq_subtitle }}</span>
+				<h2 class="title-fstyle1">{{ settings.home_faq_title }}</h2>
+				<p>{{ settings.home_faq_content }}</p>
+				<ul class="home-faq-items">
+					{%- for i in (1..3) -%}
+					{%- capture check -%}home_faq_item_check_{{ i }}{%- endcapture -%}
+					{%- capture title -%}home_faq_item_title_{{ i }}{%- endcapture -%}
+					{%- capture content -%}home_faq_item_content_{{ i }}{%- endcapture -%}
+					{%- if settings[check] -%}
+					<li class="home-faq-item {% if i == 1 %}active{% endif %}">
+						<h3>
+							<strong>{{ settings[title] }}</strong>
+							<span>
+								<i class="fa fa-plus"></i>
+								<i class="fa fa-minus"></i>
+							</span>
+						</h3>
+						<div class="home-faq-item-content">
+							{{ settings[content] }}
+						</div>
+					</li>
+					{%- endif -%}
+					{%- endfor -%}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

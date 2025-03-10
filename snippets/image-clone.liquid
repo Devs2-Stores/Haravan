@@ -1,0 +1,34 @@
+{% comment %}
+
+~~ this is use for one 2 image ~~
+{%- capture image_d -%}{%- endcapture -%}
+{%- capture image_m -%}{%- endcapture -%}
+{%- capture title -%}{%- endcapture -%}
+{%- capture link -%}{%- endcapture -%}
+<a href="{{ settings[link] }}" aria-label="{{ settings[title] | escape }}" title="{{ settings[title] | escape  }}">
+{% include "Image-clone" with d_width:"2000", d_height: "1000", m_width:"1000", m_height: "1000", count: 1, no_MobileImage: 0 %}
+</a>
+
+~~ this is use for one 1 image ~~
+{%- capture image -%}{%- endcapture -%}
+{%- capture title -%}{%- endcapture -%}
+{%- capture link -%}{%- endcapture -%}
+<a href="{{ settings[link] }}" aria-label="{{ settings[title] | escape }}" title="{{ settings[title] | escape  }}">
+{% include "Image-clone" with d_width:"2000", d_height: "1000", m_width:"", m_height: "", count: 1, no_MobileImage: 1 %}
+</a>
+
+~~ make sure to have this attirubute when using this clone ~~
+{% endcomment %}
+{%- if no_MobileImage == 0 -%}
+<picture>
+	<source width="{{ d_width }}" height="{{ d_height }}" media="(min-width: 800px)" srcset="{{ image_d | asset_url  }}">
+	<source width="{{ m_width }}" height="{{ m_height }}" media="(min-width: 0)" srcset="{{ image_m | asset_url  }}">
+	<img class="{{ image_class }}"  {% if count == 0 %}loading="eager" decoding="sync" fetchpriority="high"{% else %}loading="lazy" decoding="async" fetchpriority="low"{% endif %}
+		 width="{{ d_width }}" height="{{ d_height }}" src="{{ image_d | asset_url  }}" alt="{{ settings[title] | escape  }}" title="{{ settings[title] | escape  }}">
+</picture>
+{%- else -%}
+<picture>
+	<img class="{{ image_class }}" {% if count == 0 %}loading="eager" decoding="sync" fetchpriority="high"{% else %}loading="lazy" decoding="async" fetchpriority="low"{% endif %}
+		 width="{{ d_width }}" height="{{ d_height }}" src="{{ image | asset_url  }}" alt="{{ settings[title] | escape  }}" title="{{ settings[title] | escape  }}">
+</picture>
+{%- endif -%}

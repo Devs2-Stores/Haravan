@@ -1,0 +1,50 @@
+{%- if settings.home_fsale_two_check -%} 
+<section class="section_index--fSale section_index--fSale-twice section-distance">
+	<div class="container">
+		<div class="section_index--fSale-wrap">
+			<div class="section_index--fSale-head">
+				<h2><img loading="lazy" decoding="async" title="{{ shop.name }} - Flash Sale" width="1920" height="480"
+						 src="{{ 'home_fsale_two_image.png' | asset_url  }}" alt="{{ shop.name }} - Flash Sale"></h2>
+			</div>
+			<div class="section_index--fSale-body">
+				<div class="section_index--fSale-body-info">
+					<div class="section_index--fSale-body-info-title">
+						<div class="titleStyle1">
+							<h2>{{ settings.home_fsale_two_title }}</h2>
+							<span>{{ settings.home_fsale_two_subtitle }}</span>
+						</div>
+					</div>
+					<div class="section_index--fSale-head-countdown">
+						<label>Kết thúc sau</label>
+						<div data-time="{{ settings.home_fsale_two_time }}" class="countdownLoop"></div>
+					</div>
+				</div>
+				<div class="section_index--fSale-body-data">
+					{%- if settings.home_fsale_two_handle == blank -%}
+					<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+					{%- else -%}
+					{%- assign limit = settings.home_fsale_two_limit | default: 4 -%}
+					{%- if collections[settings.home_fsale_two_handle] -%}
+					{%- if collections[settings.home_fsale_two_handle]products_count > 0 -%}
+					{%- for product in collections[settings.home_fsale_two_handle]products limit: limit -%}
+					{%- include 'product-item' -%}
+					{%- endfor -%}
+					{%- else -%}
+					<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+					{%- endif -%}
+					{%- else -%}
+					{%- if collections.all.products_count > 0 -%}
+					{%- for product in collections.all.products limit: limit -%}
+					{%- include 'product-item' -%}
+					{%- endfor -%}
+					{%- else -%}
+					<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+					{%- endif -%}
+					{%- endif -%}
+					{%- endif -%}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{%- endif -%}

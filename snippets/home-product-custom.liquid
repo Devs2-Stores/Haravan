@@ -1,0 +1,39 @@
+{%- if settings.home_product_custom_check -%}
+<div class="home-product-custom section-distance">
+	<div class="container">
+		<div class="home-product-custom-flex">
+			<div class="titleStyle1">
+				<h2 class="text-left">
+					<a class="hover-to-bg titleStyle1" href="{{ settings.home_product_custom_main_link }}" title="{{ settings.home_product_custom_header }}">
+						{{ settings.home_product_custom_header | strip }}
+					</a>
+				</h2>
+			</div>
+			<div class="home-product-custom-list-parent">
+				{%- capture list -%}home_product_custom_collection_1{%- endcapture -%}
+				{%- capture limit -%}home_product_custom_collection_limit_1{%- endcapture -%}
+				{%- assign select_mini_collection = settings[list] -%}
+				<div class="home-product-custom-list-items active">
+					{%- if collections[select_mini_collection] -%}
+					{%- if collections[select_mini_collection].products_count > 0 -%}
+					{%- for product in collections[select_mini_collection].products limit: settings[limit] -%}
+					{%- include "product-item-action"-%}
+					{%- endfor -%}
+					{%- else -%}
+					<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+					{%- endif -%}
+					{%- else -%}
+					{%- if collections.all.products_count > 0 -%}
+					{%- for product in collections.all.products limit: settings[limit] -%}
+					{%- include "product-item-action" -%}
+					{%- endfor -%}
+					{%- else -%}
+					<p class="w-100 m-0 text-center">Nội dung đang được cập nhật...</p>
+					{%- endif -%}
+					{%- endif -%}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{%- endif -%}
