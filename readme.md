@@ -6,9 +6,9 @@ Ngôn ngữ chính: HTML, Liquid, Platform là Haravan
 - Cấu trúc thư mục cần xây dựng render ra bao gồm 2 File: index.liquid, settings.html
 
 * Rule dùng Liquid:
-- Nếu trong dùng for, dùng capture bọc settings chứ đừng dùng assign
-- Nếu không có dùng For, dùng settings.name trực tiếp vào luôn.
-- Image sẽ settings dưới dạng asset_url, đuôi .png
+- Nếu trong dòng for, dùng capture bọc settings chứ đừng dùng assign
+- Nếu không có dòng for, dùng settings.name trực tiếp vào luôn.
+- Thẻ image sẽ settings dưới dạng asset_url, đuôi .png
 
 * Về file settings.html
 - Dùng file settings.html mẫu (** Ví dụ về cấu trúc cho File settings.html **) để tạo cấu trúc tương tự
