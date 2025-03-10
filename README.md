@@ -28,6 +28,12 @@ File cần tạo, kết quả sẽ bao gồm 2 file:
 5. **Render nhiều item**: Nếu cần render nhiều item giống nhau, sử dụng vòng lặp `for`. Mỗi item đều có check ẩn hiện đầy đủ.
 6. **Hình ảnh responsive**: Hình ảnh `img` có responsive `picture` đầy đủ, settings dạng `asset_url`.
 
+## Quy tắc khi trả kết quả
+1. **File**: Chỉ bao gồm 2 file được đề cập, không tạo file mới
+2. **index.liquid**: Beautifull code
+3. **settings.html**: Beautifull code, hình ảnh note kích thước đầy đủ
+
+
 ## Ví dụ về các module
 ### Module có 1 item
 ```liquid
